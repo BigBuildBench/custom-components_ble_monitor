@@ -1,0 +1,30 @@
+---
+manufacturer: Apple
+name: iBeacon
+model: iBeacon
+image: iBeacon.jpg
+physical_description:
+broadcasted_properties:
+  - cypress temperature
+  - cypress humidity
+  - rssi
+  - measured power
+  - uuid
+  - mac
+  - major
+  - minor
+broadcasted_property_notes:
+  - property: cypress temperature
+    note: This sensor is disabled by default and can be turned on in the device menu. Measured in °C. Calculated based on minor `175.72 * ((minor & 0xff) * 256) / 65536 - 46.85`
+  - property: cypress humidity
+    note: This sensor is disabled by default and can be turned on in the device menu. Measured in RH%. Calculated based on minor `125.0 * (minor & 0xff00) / 65536 - 6`
+  - property: uuid
+    note: This sensor is disabled by default and can be turned on in the device menu.
+broadcast_rate:
+active_scan: true
+encryption_key:
+custom_firmware:
+notes:
+  - iBeacon is not a device, but a protocol developed by Apple on which beacons work, for example Apple AirTags.
+  - It should not be used for tracking `MAC addresses`, they can be dynamic, there is a `Beacon UUID` parameter for this.
+---
